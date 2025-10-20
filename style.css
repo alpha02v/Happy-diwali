@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --accent: #ff8c00;
+  --dark-bg: #0b0b0b;
+  --light-text: #fff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background: radial-gradient(circle at bottom, #150a00, #000);
+  color: var(--light-text);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+  text-align: center;
+}
+
+#splash {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 2s ease 3s forwards;
+}
+
+#splash h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  color: var(--accent);
+  text-shadow: 0 0 20px var(--accent), 0 0 40px var(--accent);
+  animation: pulse 1.5s infinite;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  opacity: 0.8;
+}
+
+.hidden {
+  display: none;
+}
+
+#main-content {
+  padding: 20px;
+  position: relative;
+  min-height: 100vh;
+}
+
+.content {
+  max-width: 600px;
+  margin: 0 auto;
+  animation: fadeIn 2s ease forwards;
+}
+
+.joju-photo {
+  width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 0 25px var(--accent);
+  animation: float 3s ease-in-out infinite;
+  margin-top: 20px;
+}
+
+.message {
+  margin: 1rem;
+  line-height: 1.6;
+  font-size: 1.1rem;
+}
+
+.video-container {
+  margin-top: 20px;
+}
+
+video {
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: 0 0 25px var(--accent);
+}
+
+.controls {
+  margin: 25px 0;
+}
+
+button {
+  background: var(--accent);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  padding: 10px 20px;
+  border-radius: 25px;
+  margin: 5px;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px var(--accent);
+}
+
+/* Fireworks */
+.fireworks-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+@keyframes pulse {
+  0%, 100% { text-shadow: 0 0 15px var(--accent); }
+  50% { text-shadow: 0 0 35px var(--accent); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+    }
+  
